@@ -11,7 +11,7 @@ This plugin Adds a floating Skype logo to your site with customizable settings l
 **Requires PHP**: 7.2  
 **Stable tag**: 1.0  
 **License**: GPLv2 or later  
-**License URI**: [link to license URI]
+**License URI**: [http://www.gnu.org/licenses/gpl-2.0.html]
 
 ## Installation
 
@@ -24,7 +24,3 @@ This plugin Adds a floating Skype logo to your site with customizable settings l
 ### 1.0
 
 - Initial release.
-
-## Screenshots
-
-(Add your screenshots here)
