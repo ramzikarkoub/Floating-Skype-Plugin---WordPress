@@ -1,0 +1,17 @@
+#floating-skype-logo {
+  position: fixed;
+  z-index: 9999;
+}
+
+#floating-skype-logo img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#floating-skype-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Additional media queries can be added here */
