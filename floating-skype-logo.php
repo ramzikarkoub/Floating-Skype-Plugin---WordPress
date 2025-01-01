@@ -181,7 +181,7 @@ function floating_skype_logo_logo_field() {
     $value = isset($options['logo']) ? esc_attr($options['logo']) : '';
     echo '<select name="floating_skype_logo_options[logo]">
             <option value="skype-logo.png"' . selected($value, 'skype-logo.png', false) . '>Skype Logo</option>
-            <!-- Add more options as needed -->
+            <option value="skype-logo-alt.png"' . selected($value, 'skype-logo-alt.png', false) . '>Alternative Skype Logo</option>
           </select>';
 }
 
