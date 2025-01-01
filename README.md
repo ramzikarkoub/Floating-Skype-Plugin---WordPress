@@ -24,3 +24,7 @@ This plugin Adds a floating Skype logo to your site with customizable settings l
 ### 1.0
 
 - Initial release.
+
+## License
+
+This plugin is licensed under the **GNU General Public License v2 or later**. See the [LICENSE file](./LICENSE) for more details.

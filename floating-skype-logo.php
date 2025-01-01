@@ -1,10 +1,14 @@
 <?php
-/*
-Plugin Name: Floating Skype Logo
-Description: Adds a floating Skype logo to the site with customizable settings.
-Version: 1.0
-Author: Ramzi Karkoub
-*/
+/**
+ * Plugin Name: Floating Skype Logo
+ * Description: Adds a floating Skype logo to your site with customizable settings like position, size, hover effects, and more.
+ * Version: 1.0
+ * Author: Ramzi Karkoub
+ * Author URI: https://www.ramzikarkoub.com
+ * License: GPL-2.0-or-later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: floating-skype-logo
+ */
 
 // Enqueue the CSS and JavaScript files
 function floating_skype_logo_enqueue_scripts() {
@@ -175,7 +179,6 @@ function floating_skype_logo_id_field() {
 function floating_skype_logo_logo_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['logo']) ? esc_attr($options['logo']) : '';
-    // Display available logos (e.g., through a file picker or hardcoded options)
     echo '<select name="floating_skype_logo_options[logo]">
             <option value="skype-logo.png"' . selected($value, 'skype-logo.png', false) . '>Skype Logo</option>
             <!-- Add more options as needed -->
