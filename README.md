@@ -4,7 +4,7 @@ This plugin Adds a floating Skype logo to your site with customizable settings l
 
 # Floating Skype
 
-**Contributors**: ramzikarkoub  
+**Contributors**: Ramzi Karkoub  
 **Tags**: skype, floating button, communication  
 **Requires at least**: 6.7.1  
 **Tested on**: 6.7.1  
