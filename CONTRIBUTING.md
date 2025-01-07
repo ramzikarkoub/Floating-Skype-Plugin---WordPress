@@ -17,7 +17,7 @@ Thank you for considering contributing to [Your Plugin Name]! We welcome bug rep
 
 ## Legal
 
-By contributing to this repository, you agree that:
+By contributing to this repository, you agree that :
 
 - You are assigning all rights of your contribution to the author.
 - The author has the right to use, modify, or reject the contribution at their sole discretion.
