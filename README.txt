@@ -1,24 +1,27 @@
-=== Floating Skype Logo ===
-Contributors: Ramzi Karkoub
-Tags: skype, floating button, communication
-Requires at least: 6.7.1
-Tested up to: 6.7.1
-Stable tag: 1.0
-Requires PHP: 7.2
-License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+# Floating Skype Logo - WordPress Plugin
 
-This plugin adds a floating Skype logo to your site with customizable settings like position, size, hover effects, and more.
+This plugin Adds a floating Skype logo to your site with customizable settings like position, size, hover effects, and more.
 
-== Description ==
+# Floating Skype
+
+**Contributors**: Ramzi Karkoub  
+**Tags**: skype, floating button, communication  
+**Requires at least**: 6.7.1  
+**Tested on**: 6.7.1  
+**Requires PHP**: 7.2  
+**Stable tag**: 1.0  
+**License**: GPLv2 or later  
+**License URI**: http://www.gnu.org/licenses/gpl-2.0.html
+
+## Description
 Add a Skype logo that floats on your WordPress site with fully customizable settings. 
 
-== Installation ==
+## Installation
 1. Upload the plugin files to the `/wp-content/plugins/floating-skype-logo` directory or install through the WordPress plugins screen.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Configure settings under **Settings > Floating Skype Logo**.
 
-== Contributing ==
+## Contributing
 We welcome bug reports and feature suggestions to improve the plugin. If you encounter issues or have ideas, please visit the GitHub repository and submit a report or pull request.
 
 ## Contribution Guidelines:
@@ -30,7 +33,7 @@ By contributing to this repository, you agree that:
 - The author owns all rights to the plugin and any contributions made.
 - Contributions may be used, modified, or rejected at the author's sole discretion.
 
-== Changelog ==
+## Changelog
 = 1.0 =
 * Initial release.
 
