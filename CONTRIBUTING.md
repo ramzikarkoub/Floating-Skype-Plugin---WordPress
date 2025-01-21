@@ -1,6 +1,6 @@
 # Floating Skype Logo
 
-Thank you for considering contributing to [Your Plugin Name]! We welcome bug reports and feature suggestions to improve the plugin.
+Thank you for considering contributing to Floating Skype Logo! We welcome bug reports and feature suggestions to improve the plugin.
 
 ## How to Contribute
 

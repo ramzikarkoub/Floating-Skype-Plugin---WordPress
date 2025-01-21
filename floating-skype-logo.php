@@ -12,8 +12,11 @@
 
 // Enqueue the CSS and JavaScript files
 function floating_skype_logo_enqueue_scripts() {
-    wp_enqueue_style('floating-skype-logo-style', plugin_dir_url(__FILE__) . 'css/floating-skype-logo.css');
-    wp_enqueue_script('floating-skype-logo-script', plugin_dir_url(__FILE__) . 'js/floating-skype-logo.js', array('jquery'), null, true);
+    wp_register_style('floating-skype-logo-style', plugin_dir_url(__FILE__) . 'css/floating-skype-logo.css', [], '1.0');
+    wp_enqueue_style('floating-skype-logo-style');
+
+    wp_register_script('floating-skype-logo-script', plugin_dir_url(__FILE__) . 'js/floating-skype-logo.js', ['jquery'], '1.0', true);
+    wp_enqueue_script('floating-skype-logo-script');
 }
 add_action('wp_enqueue_scripts', 'floating_skype_logo_enqueue_scripts');
 
@@ -34,28 +37,28 @@ function floating_skype_logo() {
     $hover_effect = isset($options['hover_effect']) ? esc_attr($options['hover_effect']) : 'scale';
 
     $position_styles = [
-        'top-left' => 'top: ' . $vertical_margin . 'px; left: ' . $horizontal_margin . 'px;',
-        'top-right' => 'top: ' . $vertical_margin . 'px; right: ' . $horizontal_margin . 'px;',
-        'bottom-left' => 'bottom: ' . $vertical_margin . 'px; left: ' . $horizontal_margin . 'px;',
-        'bottom-right' => 'bottom: ' . $vertical_margin . 'px; right: ' . $horizontal_margin . 'px;',
+        'top-left' => 'top: ' . esc_attr($vertical_margin) . 'px; left: ' . esc_attr($horizontal_margin) . 'px;',
+        'top-right' => 'top: ' . esc_attr($vertical_margin) . 'px; right: ' . esc_attr($horizontal_margin) . 'px;',
+        'bottom-left' => 'bottom: ' . esc_attr($vertical_margin) . 'px; left: ' . esc_attr($horizontal_margin) . 'px;',
+        'bottom-right' => 'bottom: ' . esc_attr($vertical_margin) . 'px; right: ' . esc_attr($horizontal_margin) . 'px;',
     ];
 
     $hover_style = $hover_effect === 'rotate' ? 'transform: rotate(15deg);' : 'transform: scale(1.1);';
 
     echo '<style>
-            #floating-skype-logo img {
-                width: ' . $logo_size . 'px;
-                height: ' . $logo_size . 'px;
-            }
-            #floating-skype-logo img:hover {
-                ' . $hover_style . '
-            }
-          </style>';
-    echo '<div id="floating-skype-logo" style="position: fixed; ' . $position_styles[$position] . '">
-            <a href="skype:' . $skype_id . '?call">
-                <img src="' . esc_url(plugin_dir_url(__FILE__) . 'images/' . $logo) . '" alt="Skype">
-            </a>
-          </div>';
+        #floating-skype-logo img {
+            width: ' . esc_attr($logo_size) . 'px;
+            height: ' . esc_attr($logo_size) . 'px;
+        }
+        #floating-skype-logo img:hover {
+            ' . esc_html($hover_style) . '
+        }
+    </style>';
+    echo '<div id="floating-skype-logo" style="position: fixed; ' . esc_attr($position_styles[$position]) . '">
+        <a href="skype:' . esc_attr($skype_id) . '?call">
+            <img src="' . esc_url(plugin_dir_url(__FILE__) . 'images/' . esc_attr($logo)) . '" alt="Skype">
+        </a>
+    </div>';
 }
 add_action('wp_footer', 'floating_skype_logo');
 
@@ -173,7 +176,7 @@ function floating_skype_logo_sanitize_options($input) {
 function floating_skype_logo_id_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['skype_id']) ? esc_attr($options['skype_id']) : '';
-    echo '<input type="text" name="floating_skype_logo_options[skype_id]" value="' . $value . '" />';
+    echo '<input type="text" name="floating_skype_logo_options[skype_id]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_logo_field() {
@@ -208,19 +211,19 @@ function floating_skype_logo_position_field() {
 function floating_skype_logo_vertical_margin_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['vertical_margin']) ? absint($options['vertical_margin']) : '';
-    echo '<input type="number" name="floating_skype_logo_options[vertical_margin]" value="' . $value . '" />';
+    echo '<input type="number" name="floating_skype_logo_options[vertical_margin]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_horizontal_margin_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['horizontal_margin']) ? absint($options['horizontal_margin']) : '';
-    echo '<input type="number" name="floating_skype_logo_options[horizontal_margin]" value="' . $value . '" />';
+    echo '<input type="number" name="floating_skype_logo_options[horizontal_margin]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_logo_size_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['logo_size']) ? absint($options['logo_size']) : '';
-    echo '<input type="number" name="floating_skype_logo_options[logo_size]" value="' . $value . '" />';
+    echo '<input type="number" name="floating_skype_logo_options[logo_size]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_hover_effect_field() {
@@ -256,19 +259,19 @@ function floating_skype_logo_mobile_position_field() {
 function floating_skype_logo_mobile_vertical_margin_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['mobile_vertical_margin']) ? absint($options['mobile_vertical_margin']) : '';
-    echo '<input type="number" name="floating_skype_logo_options[mobile_vertical_margin]" value="' . $value . '" />';
+    echo '<input type="number" name="floating_skype_logo_options[mobile_vertical_margin]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_mobile_horizontal_margin_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['mobile_horizontal_margin']) ? absint($options['mobile_horizontal_margin']) : '';
-    echo '<input type="number" name="floating_skype_logo_options[mobile_horizontal_margin]" value="' . $value . '" />';
+    echo '<input type="number" name="floating_skype_logo_options[mobile_horizontal_margin]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_mobile_logo_size_field() {
     $options = get_option('floating_skype_logo_options');
     $value = isset($options['mobile_logo_size']) ? absint($options['mobile_logo_size']) : '';
-    echo '<input type="number" name="floating_skype_logo_options[mobile_logo_size]" value="' . $value . '" />';
+    echo '<input type="number" name="floating_skype_logo_options[mobile_logo_size]" value="' . esc_attr($value) . '" />';
 }
 
 function floating_skype_logo_mobile_hover_effect_field() {
