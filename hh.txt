@@ -17,49 +17,25 @@ function floating_skype_logo_enqueue_scripts() {
 
     wp_register_script('floating-skype-logo-script', plugin_dir_url(__FILE__) . 'js/floating-skype-logo.js', ['jquery'], '1.0', true);
     wp_enqueue_script('floating-skype-logo-script');
-
-    // Enqueue the media uploader script
-    if (is_admin()) {
-        wp_enqueue_media();
-    }
 }
 add_action('wp_enqueue_scripts', 'floating_skype_logo_enqueue_scripts');
-add_action('admin_enqueue_scripts', 'floating_skype_logo_enqueue_scripts');
 
 // Add the floating Skype logo to the footer
 function floating_skype_logo() {
     $options = get_option('floating_skype_logo_options');
-    
-    // Check if mobile-specific display is disabled
-    $is_mobile = wp_is_mobile();
-    $display = $is_mobile 
-        ? (isset($options['mobile_display']) ? esc_attr($options['mobile_display']) : 'yes') 
-        : (isset($options['display']) ? esc_attr($options['display']) : 'yes');
-    
+    $display = isset($options['display']) ? esc_attr($options['display']) : 'yes';
     if ($display === 'no') {
         return;
     }
 
-    // Select settings based on device type
     $skype_id = isset($options['skype_id']) ? esc_attr($options['skype_id']) : '';
-    $position = $is_mobile 
-        ? (isset($options['mobile_position']) ? esc_attr($options['mobile_position']) : 'bottom-right') 
-        : (isset($options['position']) ? esc_attr($options['position']) : 'bottom-right');
-    $vertical_margin = $is_mobile 
-        ? (isset($options['mobile_vertical_margin']) ? intval($options['mobile_vertical_margin']) : 20) 
-        : (isset($options['vertical_margin']) ? intval($options['vertical_margin']) : 20);
-    $horizontal_margin = $is_mobile 
-        ? (isset($options['mobile_horizontal_margin']) ? intval($options['mobile_horizontal_margin']) : 20) 
-        : (isset($options['horizontal_margin']) ? intval($options['horizontal_margin']) : 20);
+    $position = isset($options['position']) ? esc_attr($options['position']) : 'bottom-right';
+    $vertical_margin = isset($options['vertical_margin']) ? intval($options['vertical_margin']) : 20;
+    $horizontal_margin = isset($options['horizontal_margin']) ? intval($options['horizontal_margin']) : 20;
     $logo = isset($options['logo']) ? esc_attr($options['logo']) : 'skype-logo.png';
-    $logo_size = $is_mobile 
-        ? (isset($options['mobile_logo_size']) ? intval($options['mobile_logo_size']) : 50) 
-        : (isset($options['logo_size']) ? intval($options['logo_size']) : 50);
-    $hover_effect = $is_mobile 
-        ? (isset($options['mobile_hover_effect']) ? esc_attr($options['mobile_hover_effect']) : 'scale') 
-        : (isset($options['hover_effect']) ? esc_attr($options['hover_effect']) : 'scale');
+    $logo_size = isset($options['logo_size']) ? intval($options['logo_size']) : 50;
+    $hover_effect = isset($options['hover_effect']) ? esc_attr($options['hover_effect']) : 'scale';
 
-    // Define position styles
     $position_styles = [
         'top-left' => 'top: ' . esc_attr($vertical_margin) . 'px; left: ' . esc_attr($horizontal_margin) . 'px;',
         'top-right' => 'top: ' . esc_attr($vertical_margin) . 'px; right: ' . esc_attr($horizontal_margin) . 'px;',
@@ -69,7 +45,6 @@ function floating_skype_logo() {
 
     $hover_style = $hover_effect === 'rotate' ? 'transform: rotate(15deg);' : 'transform: scale(1.1);';
 
-    // Output the logo HTML and inline styles
     echo '<style>
         #floating-skype-logo img {
             width: ' . esc_attr($logo_size) . 'px;
@@ -85,7 +60,6 @@ function floating_skype_logo() {
         </a>
     </div>';
 }
-
 add_action('wp_footer', 'floating_skype_logo');
 
 // Add settings menu to the admin dashboard
@@ -308,3 +282,5 @@ function floating_skype_logo_mobile_hover_effect_field() {
             <option value="rotate"' . selected($value, 'rotate', false) . '>Rotate</option>
           </select>';
 }
+
+// old functioning code

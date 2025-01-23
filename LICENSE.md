@@ -1,19 +1,11 @@
+Proprietary License
 
-To make your plugin proprietary and restrict copying or reuse while allowing contributions through GitHub, you'll need to revise both the license.txt and readme.txt files. Below is the updated content for each file based on your requirements.
+Copyright (c) 2025 Ramzi Karkoub
 
-Updated license.txt
-plaintext
-Copy code
-Proprietary License for Floating Skype Logo
-Copyright (C) 2025 Ramzi Karkoub. All rights reserved.
+All rights reserved.
 
-This software is proprietary and confidential. Redistribution, modification, or use in any form is prohibited without explicit written permission from the author.
+Permission is granted to contributors explicitly authorized by the copyright holder to contribute to the development and improvement of this software. However, no permission is granted to copy, modify, merge, publish, distribute, sublicense, sell, or otherwise use this software or any part thereof without explicit written consent from the copyright holder.
 
-You may not copy, modify, distribute, sublicense, or sell this software, in whole or in part, without prior written authorization from the author. Unauthorized use of this software is a violation of copyright law and may result in civil and criminal penalties.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-This software is provided "as is," without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. The author is not liable for any damage or loss resulting from the use of this software.
-
-If you identify a bug or wish to suggest improvements, you are encouraged to contribute to the project on GitHub. Contributions must comply with the guidelines specified in the repository.
-
-For inquiries, permissions, or contributions, please contact:
-Ramzi Karkoub
+For permission requests, please contact karkoub.ramzi@gmail.com or contact@ramzikarkoub.com.
